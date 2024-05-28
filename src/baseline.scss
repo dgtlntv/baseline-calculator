@@ -1,0 +1,21 @@
+$ubuntuSansLineHeightScale: 1.12;
+$ubuntuSansAscenderHeightScale: 0.94;
+
+@function calculateBaselineKick($num) {
+    $remainder: $num % $sp-unit;
+    @if $remainder == 0 {
+        @return 0;
+    } @else {
+        @return $sp-unit - $remainder;
+    }
+}
+
+@function calculateDistanceToBaseline($fontSize, $lineHeight) {
+    $distanceToBaseline: ($lineHeight - $ubuntuSansLineHeightScale * $fontSize) / 2 + $fontSize *
+        $ubuntuSansAscenderHeightScale;
+
+    $addOnTop: calculateBaselineKick($distanceToBaseline);
+    $addOnBottom: calculateBaselineKick($lineHeight + $addOnTop);
+
+    @return ($addOnTop, $addOnBottom);
+}

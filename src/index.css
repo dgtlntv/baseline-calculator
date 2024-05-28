@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.u-baseline-grid {
+    position: relative;
+}
+
+.u-baseline-grid::after {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.15), rgba(255, 0, 0, 0.15) 1px, transparent 1px, transparent);
+    background-size: 100% 8px; /* use the value from $baseline-size */
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 8px; /* use the value from $baseline-offset */
+    z-index: 200;
+}
