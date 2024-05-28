@@ -14,6 +14,8 @@ function App() {
 
     function nextDivisibleByHalfRem(num) {
         let remainder = num % 8
+        console.log("num", num)
+        console.log("remainder", remainder)
         if (remainder === 0) {
             return 0
         } else {
@@ -42,7 +44,7 @@ function App() {
                         type="number"
                         defaultValue={16}
                         onChange={(e) => {
-                            setFontSize(e.target.value)
+                            setFontSize(Number(e.target.value))
                         }}
                     ></input>
                 </div>
@@ -53,7 +55,7 @@ function App() {
                         type="number"
                         defaultValue={24}
                         onChange={(e) => {
-                            setLineHeight(e.target.value)
+                            setLineHeight(Number(e.target.value))
                         }}
                     ></input>
                 </div>
@@ -63,6 +65,30 @@ function App() {
                 className="u-baseline-grid"
                 style={{ position: "relative", paddingTop: "64px", paddingBottom: "64px" }}
             >
+                <p
+                    style={{
+                        fontFamily: fontFamily,
+                        fontWeight: "normal",
+                        fontSize: `${fontSize}px`,
+                        lineHeight: `${lineHeight}px`,
+                        paddingTop: `${addTop}px`,
+                        marginBottom: `${addBottom}px`,
+                    }}
+                >
+                    hello world :)
+                </p>
+                <p
+                    style={{
+                        fontFamily: fontFamily,
+                        fontWeight: "normal",
+                        fontSize: `${fontSize}px`,
+                        lineHeight: `${lineHeight}px`,
+                        paddingTop: `${addTop}px`,
+                        marginBottom: `${addBottom}px`,
+                    }}
+                >
+                    hello world :)
+                </p>
                 <p
                     style={{
                         fontFamily: fontFamily,
